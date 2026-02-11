@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   nats:
     image: nats:latest
@@ -9,7 +7,7 @@ services:
     command: ["-js", "-m", "8222"]
 
   auth-service:
-    build: ./auth-microservice
+    build: .
     depends_on:
       - nats
     environment:
@@ -23,16 +21,16 @@ services:
       - "443:443"
       - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yml:/etc/traefik/traefik.yml
-      - ./dynamic-config.yml:/etc/traefik/dynamic-config.yml
+      - ./dynamic-config.yml:/etc/traefik/dynamic/dynamic-config.yml
     depends_on:
       - nats
       - auth-service
 
   backend:
-    image: your-backend-service
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.backend.rule=Host(`api.example.com`)"
-      - "traefik.http.routers.backend.middlewares=nats-auth@file"
+    image: nginx:latest
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.backend.rule=Host(`api.example.com`)"
+    #   - "traefik.http.routers.backend.middlewares=nats-auth@file"

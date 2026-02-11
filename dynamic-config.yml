@@ -3,7 +3,7 @@ http:
   middlewares:
     nats-auth:
       plugin:
-        traefik-nats-auth:
+        natsauth:
           enabled: true
           natsUrl: "nats://nats-server:4222"
           natsToken: "your-nats-token" # Optional

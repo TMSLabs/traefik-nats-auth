@@ -1,4 +1,4 @@
-package traefik_nats_auth
+package plugin
 
 import (
 	"context"

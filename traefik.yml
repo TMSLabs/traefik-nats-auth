@@ -1,0 +1,42 @@
+# Development configuration - simplified
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true
+  insecure: true # Allow insecure dashboard for dev
+  debug: true
+
+log:
+  level: DEBUG
+  format: common
+
+accessLog:
+  format: common
+
+entryPoints:
+  web:
+    address: ":80"
+
+  traefik:
+    address: ":8080"
+
+providers:
+  file:
+    directory: /etc/traefik/dynamic
+    watch: true
+
+  # docker:
+  #   endpoint: "unix:///var/run/docker.sock"
+  #   exposedByDefault: false
+  #   watch: true
+
+experimental:
+  plugins:
+    natsauth:
+      moduleName: "github.com/TMSLabs/traefik-nats-auth/plugin"
+      version: "v0.0.1"
+
+ping:
+  entryPoint: traefik
