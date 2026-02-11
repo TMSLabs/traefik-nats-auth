@@ -1,0 +1,30 @@
+# Dynamic configuration
+http:
+  middlewares:
+    nats-auth:
+      plugin:
+        traefik-nats-auth:
+          enabled: true
+          natsUrl: "nats://nats-server:4222"
+          natsToken: "your-nats-token" # Optional
+          authSubject: "auth.verify"
+          timeout: "2s"
+          cacheEnabled: true
+          cacheTTL: "5m"
+          headerName: "Authorization"
+          allowedPaths:
+            - "/health"
+            - "/public"
+
+  routers:
+    my-service:
+      rule: "Host(`api.example.com`)"
+      service: my-service
+      middlewares:
+        - nats-auth
+
+  services:
+    my-service:
+      loadBalancer:
+        servers:
+          - url: "http://backend:8080"

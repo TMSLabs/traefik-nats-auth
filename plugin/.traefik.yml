@@ -1,0 +1,13 @@
+displayName: NATS Authentication Plugin
+type: middleware
+import: github.com/TMSLabs/traefik-nats-auth/plugin
+
+summary: Authenticates requests via NATS-connected microservice
+
+testData:
+  enabled: true
+  natsUrl: "nats://localhost:4222"
+  authSubject: "auth.verify"
+  timeout: "2s"
+  cacheEnabled: true
+  cacheTTL: "5m"
