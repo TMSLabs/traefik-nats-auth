@@ -1,3 +1,5 @@
+github.com/TMSLabs/traefik-nats-auth/plugin v0.0.0-20260211103501-14f53c3e5bbc h1:0iXE+7N5W2xASBwgcjgDPoPY7qM02nw93PMVku0Jbwk=
+github.com/TMSLabs/traefik-nats-auth/plugin v0.0.0-20260211103501-14f53c3e5bbc/go.mod h1:TH7HAe8Gli82YDnmIPC6iwSOgTtMhvoJcNwl41A0dxA=
 github.com/klauspost/compress v1.18.0 h1:c/Cqfb0r+Yi+JtIEq73FWXVkRonBlf0CRNYc8Zttxdo=
 github.com/klauspost/compress v1.18.0/go.mod h1:2Pp+KzxcywXVXMr50+X0Q/Lsb43OQHYWRCY2AiWywWQ=
 github.com/nats-io/nats.go v1.48.0 h1:pSFyXApG+yWU/TgbKCjmm5K4wrHu86231/w84qRVR+U=

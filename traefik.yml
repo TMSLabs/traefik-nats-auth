@@ -36,7 +36,7 @@ experimental:
   plugins:
     natsauth:
       moduleName: "github.com/TMSLabs/traefik-nats-auth/plugin"
-      version: "v0.0.1"
+      version: "v0.0.2"
 
 ping:
   entryPoint: traefik

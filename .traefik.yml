@@ -1,6 +1,6 @@
 displayName: NATS Authentication Plugin
 type: middleware
-import: github.com/TMSLabs/traefik-nats-auth/plugin
+import: github.com/TMSLabs/traefik-nats-auth
 
 summary: Authenticates requests via NATS-connected microservice
 
