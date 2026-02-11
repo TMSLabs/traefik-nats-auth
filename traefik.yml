@@ -34,12 +34,12 @@ providers:
 
 experimental:
   plugins:
-    # natsauth:
-    #   moduleName: "github.com/TMSLabs/traefik-nats-auth"
-    #   version: "v0.0.3"
-    block:
-      moduleName: github.com/traefik/plugin-blockpath
-      version: v0.2.0
+    natsauth:
+      moduleName: "github.com/TMSLabs/traefik-nats-auth"
+      version: "v0.0.4"
+    # block:
+    #   moduleName: github.com/traefik/plugin-blockpath
+    #   version: v0.2.0
 
 ping:
   entryPoint: traefik
